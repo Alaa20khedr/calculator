@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    
+</head>
+<body>
+   <div class="container" >
+    <div class="calculator">
+        <form>
+            <div class="calc">
+                <input type="text" name="data" placeholder="0" id="output">
+            </div>
+            <div>
+                <input type="button" value="AC" onclick="data.value=''" class="operate">
+                <input type="button" value="DE"  onclick=del()  class="operate">
+                <input type="button" value="."onclick="data.value+='.'" class="operate">
+                <input type="button" value="/"onclick="data.value+='/'" class="operate">
+            </div>
+            <div>
+                <input type="button" value="7" onclick="data.value+='7'">
+                <input type="button" value="8" onclick="data.value+='8'">
+                <input type="button" value="9"onclick="data.value+='9'">
+                <input type="button" value="*" onclick="data.value+='*'" class="operate">
+            </div>
+            <div>
+              
+                <input type="button" value="4" onclick="data.value+='4'" >
+                <input type="button" value="5"  onclick="data.value+='5'">
+                <input type="button" value="6"  onclick="data.value+='6'">
+                <input type="button" value="-"  onclick="data.value+='-'" class="operate">
+            </div>
+            <div>
+                <input type="button" value="1"  onclick="data.value+='1'">
+                <input type="button" value="2"  onclick="data.value+='2'">
+                <input type="button" value="3"  onclick="data.value+='3'">
+                <input type="button" value="+"  onclick="data.value+='+'" class="operate">
+            </div>
+            <div>
+                <input type="button" value="00" onclick="data.value+='00'">
+                <input type="button" value="0" onclick="data.value+='0'">
+                <input type="button" value="=" class="equal "  onclick="calc()">
+           
+            </div>
+        </form>
+    </div>
+
+   </div> 
+
+<script>
+    let output = document.getElementById("output")
+    function del(){
+        output.value=output.value.slice(0,-1)
+    }
+    function calc(){
+        try{
+             output.value=eval(output.value)
+        }
+        catch(err){
+            alert("Invalid")
+
+        }
+    }
+</script>
+   
+</body>
+</html>
